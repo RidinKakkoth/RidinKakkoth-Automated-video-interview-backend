@@ -385,6 +385,7 @@ const submitInterviewData = async (req, res) => {
       const transcription = req.body[`transcription_${index + 1}`];
       const videoPath = file.path;
 
+      res.json(file,question,transcription,videoPath, "interview details")
       // Evaluate the transcription
       const evaluation = await evaluateTranscription(question, transcription);
       evaluations.push({
