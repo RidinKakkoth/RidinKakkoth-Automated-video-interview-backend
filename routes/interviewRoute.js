@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require('multer');
-const { addInterview, fetchInterviews, singleInterviewData, submitInterviewData } = require('../controllers/interviewController.js');
+const { addInterview, fetchInterviews, singleInterviewData, submitInterviewData, updateListedStatus } = require('../controllers/interviewController.js');
 
 const interviewRouter = express.Router();
 
@@ -35,6 +35,7 @@ const upload = multer({
 interviewRouter.post('/add', addInterview);
 interviewRouter.get('/interview-list', fetchInterviews);
 interviewRouter.get('/interview-list/:id', singleInterviewData);
+interviewRouter.get('/interview-list/status/:id', updateListedStatus);
 
 // Use the `upload` middleware for the `/submit` route
 interviewRouter.post('/submit', upload, (req, res, next) => {
