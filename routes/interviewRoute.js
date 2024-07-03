@@ -35,7 +35,7 @@ const upload = multer({
 interviewRouter.post('/add', addInterview);
 interviewRouter.get('/interview-list', fetchInterviews);
 interviewRouter.get('/interview-list/:id', singleInterviewData);
-interviewRouter.get('/interview-list/status/:id', updateListedStatus);
+interviewRouter.patch('/interview-list/status/:id', updateListedStatus);
 
 // Use the `upload` middleware for the `/submit` route
 interviewRouter.post('/submit', upload, (req, res, next) => {
