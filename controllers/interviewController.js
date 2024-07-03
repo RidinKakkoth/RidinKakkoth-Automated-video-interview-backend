@@ -436,7 +436,7 @@ const updateListedStatus=async(req,res)=>{
         const interview=await interviewModel.findById(interview_id)
 
         if (!interview) {
-            return res.status(404).json({ success: false, message: 'interview item not found' });
+            return res.status(404).json({ success: false, message: 'interview  not found' });
           }
 
           interview.listed = !interview.listed;

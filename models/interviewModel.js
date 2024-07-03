@@ -19,6 +19,10 @@ const interviewSchema = new mongoose.Schema({
       message: "Please add at least one question for the interview.",
     },
   },
+  listed:{
+    type:Boolean,
+    default:true
+  }
 },
 { timestamps: true }
 );
